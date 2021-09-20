@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/barcelona.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>NOTICIAS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        *{
+          box-sizing: border-box;
+          margin: 0px;
+          list-style:none;
+          top:0;
+        } 
+        body{
+            background-color: rgb(49, 49, 87); 
+        }
+        .menuh{
+            background-color: rgb(49, 49, 87);
+            height:50px;
+            box-shadow: 0px 0px 10px red;
+ 	    }
+       .menun{
+            display:none;
+        }
+        .men{
+            float:left;
+        }
+        ul{
+            display: none;
+        }
+
+        input:checked  ~ ul{
+            display:block;
+        }
+
+        input {
+            display: none;
+        }
+        label {
+            padding-top:5px;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 40px;
+            height: 50px;
+            line-height: 30px;
+            font-weight: bold;
+            text-align: center;
+            user-select: none;
+            font-size: 40px;
+            color: red;
+        }
+        li{
+            text-decoration: none;
+            color: rgba(105, 105, 148, 0.911);
+            height:60px;
+            font-family: Oswald,sans-serif;
+            font-size: 16px;
+            display: inline-block;
+            padding-top:12px;
+            padding-bottom:12px;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+            font-weight: bold;
+            border: 1px solid rgba(105, 105, 148, 0.226);
+            text-align: center; 
+            background-color: rgb(49, 49, 87)
+        }
+        li a{
+            text-decoration: none;
+            font-family: Oswald,sans-serif;
+            font-size: 16px;
+            color: rgba(105, 105, 148, 0.911);
+            display: inline-block;
+            text-transform: uppercase;
+            text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+            font-weight: bold;
+            text-align: center;
+        }
+        li:hover{
+            background-color: rgba(148, 34, 34, 0.589);
+            color: rgba(201, 40, 40, 0.658);
+            text-shadow: 0px 0px 1px rgb(180, 57, 57);
+        }
+        li a:hover{
+            background-color: transparent;
+            color: rgba(201, 40, 40, 0.658);
+            text-shadow: 0px 0px 1px rgb(180, 57, 57);
+        }
+        .imagen3{
+            float:left;
+        }
+        .imagen3 img{
+            width:100%;
+            height:45px;
+            padding-top: 5px;
+            padding-right: 5px;
+        } 
+        .redes{
+            text-align:center;
+            color:white;
+            font-family: Bebas Neue;
+            border-top: 2px solid black;
+            box-shadow: 0px 0px 15px red;
+
+        }
+        .redes h3{
+            font-size: 15px;
+            height:30px;
+            padding-top:20px;
+            text-transform: uppercase;
+        }
+        .red{
+            height:60px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 0px transparent;
+        }
+        .reds{
+            height:60px;
+            float:left;
+        }
+        .reds img{
+            width:100%;
+            height:60px;
+            padding-left:3px;
+            padding-right:3px;
+            padding-top:3px;
+            padding-bottom:3px;
+        }
+        .creditos{
+            height:120px;
+            background-color: rgba(18,16,37,255);
+            padding-top: 15px;
+            margin-top:120px;
+        }
+        .creditos p{
+            background-color: transparent;
+            font-size: 10px;
+            float: left;
+            text-align:center;
+            text-transform: uppercase;
+        }
+        .creditos a{
+            text-decoration: none;
+            background-color: transparent;
+            font-size: 10px;
+            height: 25px;
+            float: left;
+            color:white;
+            font-weight: bold;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align:center;
+        }
+        .creditos a:hover{
+            font-size:15px;
+        }
+        .titulot{
+                color:white;
+                font-family: Oswald;
+                text-align: center;
+                font-size:50px;
+                text-shadow: 0px 0px 15px red;
+                margin-top:80px;
+        }
+        .noticiap{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 80px;
+                margin-bottom: 30px;
+                background-color: white;
+                height: 300px;
+                border-radius: 25px;
+                border: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+        }
+        .img1{
+                height: 200px;
+                float: left;
+                border-radius: 25px;
+        }
+        .img1 img{
+                width: 100%;
+                height: 196px;
+                border-radius: 22px;
+        }
+        .text1{
+                height: 100px;
+                float: left;
+                background-color: transparent;
+                text-align:center;
+
+        }
+        .text1 h2{
+                width:100%;
+                font-size:20px;
+                font-family: Bebas Neue;
+                color:black;
+                font-weight: bold;  
+                padding-left: 8px;
+                padding-right:8px;
+        }
+        .text1 p{
+            display: none;
+        }
+        .noticia2{
+                text-decoration: none;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 80px;
+                margin-bottom: 30px;
+                background-color: white;
+                height: 300px;
+                border-radius: 25px;
+                border: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+        }
+        .imagenn{
+                height: 200px;
+                float: left;
+                border-radius: 25px;
+        }
+        .imagenn img{
+                width: 100%;
+                height: 196px;
+                border-radius: 22px;
+        }
+        .noticia2 h2{
+                text-align: center;
+                width:100%;
+                font-size:20px;
+                font-family: Bebas Neue;
+                color:black;
+                font-weight: bold;  
+                padding-left: 8px;
+                padding-right:8px;
+                text-decoration: underline;
+        }
+        @media only screen and (min-width:432px){
+            .imagen3 img{
+                width:75%;
+                height:45px;
+                padding-top: 5px;
+                padding-right: 5px;
+            }
+            .noticiap{
+                height: 500px;
+            }
+            .img1{
+                    height: 350px;
+            }
+            .img1 img{
+                    width: 100%;
+                    height: 346px;
+            }
+            .text1{
+                    height: 150px;
+
+            }
+            .text1 h2{
+                    font-size:40px;
+            }
+            .noticia2{
+                height: 500px;
+            }
+            .imagenn{
+                height:350px;
+            }
+            .imagenn img{
+                height:346px;
+            }
+            .noticia2 h2{
+                font-size:40px;
+            }
+            .reds{
+                height:100px;
+                float:left;
+            }
+            .reds img{
+                width:70%;
+                height:100px;
+            } 
+            .creditos{
+                margin-top:250px;
+            } 
+        }  
+        @media only screen and (min-width:992px){
+            .menuh{
+                display: none;
+            }
+            nav{
+                position:fixed;
+            }
+            .menun{
+                display:block;
+                background-color: rgb(49, 49, 87);
+                height:80px;
+                float:left;
+                text-align: center;
+                box-shadow: 0 0 50px red;
+            }
+            .imagen{
+                float:left;
+                padding-top:10px;
+                padding-left: 40px;
+                height:80px;
+                border-left: 5px solid rgb(0, 0, 145);
+                border-right: 5px solid rgb(184, 0, 0);
+                text-align:left;
+            }
+            .imagen:hover{
+                border-bottom: 5px solid rgb(184, 0, 0);
+                border-top: 5px solid rgb(0, 0, 145);
+                padding-top:4px;
+            }
+            .imagen1{
+                width:80%;
+                height: 60px;
+            }
+            .opciones{
+                float:left;
+            }
+            .opcion{
+                text-decoration: none;
+                color: rgba(105, 105, 148, 0.911);
+                height:60px;
+                font-family: Oswald,sans-serif;
+                font-size: 20px;
+                display: block;
+                padding-top:12px;
+                padding-bottom:12px;
+                text-transform: uppercase;
+                text-shadow: 0px 0px 1px rgba(128, 128, 173, 0.911);
+                float:left;
+                font-weight: bold;
+                border: 1px solid rgba(105, 105, 148, 0.226);
+            } 
+            .opcion:hover{
+                background-color: rgba(148, 34, 34, 0.589);
+                color: rgba(201, 40, 40, 0.658);
+                text-shadow: 0px 0px 1px rgb(180, 57, 57);
+            }  
+            .espacio{
+                height:20px;
+                float:right;
+                border: 1px solid rgba(105, 105, 148, 0.226);
+            }
+            .imagen2{
+                float:left;
+            }
+            .imagen2 img{
+                padding-top: 10px;
+                width: 60%;
+            }
+            .noticiap{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 120px;
+                background-color: white;
+                height: 500px;
+                border-radius: 25px;
+                border: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+                margin-bottom: 0px;
+            }
+            .img1{
+                height: 500px;
+                float: left;
+                border-radius: 25px;
+            }
+            .img1 img{
+                width: 100%;
+                height: 496px;
+                border-radius: 22px;
+            }
+            .text1{
+                height: 500px;
+                float: left;
+                background-color: transparent;
+                text-align:justify;
+            }
+            .text1 h2{
+                width:100%;
+                font-size:40px;
+                font-family: Bebas Neue;
+                color:black;
+                font-weight: bold;  
+                padding-left: 8px;
+                padding-right:8px;
+                margin-top: 170px;
+                
+            }
+            .text1 p{
+                display: inline-block;
+                padding-left:10px;
+                padding-right:10px;
+                color:gray;
+                font-size: 15px;
+            }
+            .separador{
+                height:100px;
+                float:left;
+            }
+            .espacio2{
+                height:300px;
+                float:left;
+            }
+            .noticia2{
+                height:300px;
+                background-color: white;
+                border-radius: 25px;
+                border: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+                float:left;
+                margin-bottom: 0px;
+                margin-top:0px;
+            }
+            .imagenn{
+                height:200px;
+                border-radius:25px;
+
+            }
+            .imagenn img{
+                width:100%;
+                height:200px;
+                border-radius:22px;
+            }
+            .noticia2 h2{
+                padding-top:220px;
+                width:100%;
+                font-size:25px;
+                font-family: Bebas Neue;
+                color:black;
+                font-weight: bold;  
+                padding-left: 8px;
+                padding-right:8px;
+                text-align:center;
+
+            }
+            .separadort{
+                height:50px;
+            }
+            .redes{
+                height:280px;
+                text-align:center;
+                color:white;
+                border-top: 2px solid black;
+                box-shadow: 0px 0px 15px red;
+                margin-top:1800px;
+            }
+            .redes h3{
+                font-size: 25px;
+                height:50px;
+                padding-top:20px;
+                text-align:center;
+                padding-right: 17%;
+            }
+            .redes div{
+                box-shadow: 0px 0px 0px transparent;
+            }
+            .red{
+                height:100px;
+                margin-left: auto;
+                margin-right: auto;
+                box-shadow: 0px 0px 0px transparent;
+            }
+            .reds{
+                height:100px;
+                float:left;
+                padding-left:5px;
+                padding-right:5px;
+            }
+            .reds img{
+                width:100%;
+                height:100px;
+                padding:0px;
+            }
+            .reds img:hover{
+                border: 2px solid white;
+            }
+            .creditos{
+                height:70px;
+                background-color: rgba(18,16,37,255);
+                padding-top: 15px;
+                margin-top:0px;
+            }    
+            .creditos p{
+                background-color: transparent;
+                font-size: 15px;
+                float: left;
+                text-align:right;
+            }
+            .creditos a{
+                text-decoration: none;
+                background-color: transparent;
+                font-size: 15px;
+                float: left;
+                color:white;
+                font-weight: bold;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align:center;
+            }
+            .creditos a:hover{
+                font-size:20px;
+            }
+            .titulot{
+                color:white;
+                font-family: Oswald;
+                text-align: center;
+                font-size:80px;
+                text-shadow: 0px 0px 15px red;
+                margin-top:130px;
+            }        
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="col-12 col-lg-12 menuh">
+        <div class="men col-10">
+            <input type="checkbox" id="menu">
+            <label for="menu"> ☰ </label>
+            <ul>
+                <li class="col-6"><a href="">HOME</a></li>
+                <li class="col-6"><a href="">CALENDARIO</a></li>
+                <li class="col-6"><a href="">PALMARÉS</a></li>
+            </ul>
+        </div>
+        <div class="imagen3 col-2">
+            <img src="img/barcelona.png">
+        </div>
+
+    </nav>
+    <nav class="col-12 col-m-12 col-g-12 menun">
+        <div class="imagen col-12 col-lg-3">
+            <img src="img/FCBARCELONA.png" class="imagen1">
+        </div>    
+        <div class="opciones col-12 col-lg-9">
+            <a class="espacio col-12 col-lg-12"></a>
+            <a href="https://david10dx.github.io/desarrolloapps/" class="opcion l-12 col-lg-2">HOME</a>
+            <a href="https://david10dx.github.io/dise-oweb/" class="opcion l-12 col-lg-2">CALENDARIO</a>
+            <a href="https://david10dx.github.io/kepixelh/" class="opcion l-12 col-lg-2">PALMARÉS</a>
+            <div class="imagen2 col-12 col-lg-6">
+                <img src="img/mesqueunclub.png">
+            </div>
+        </div>
+    </nav> 
+    <h1 class="titulot col-12 col-lg-12">NOTICIAS</h1> 
+    <a href="https://www.marca.com/futbol/primera-division/2021/09/17/6144c36a46163f148f8b462d.html" target="_blank">
+        <div class="noticiap col-11 col-lg-9">
+            <div class="img1 col-12 col-lg-6">
+                <img src="https://cdn.vox-cdn.com/thumbor/u06UEcUOLRfJ8l0M0Bj2j6dPeUY=/0x0:3825x2656/1200x800/filters:focal(2274x818:2886x1430)/cdn.vox-cdn.com/uploads/chorus_image/image/67661162/1257580036.jpg.0.jpg">
+            </div>
+            <div class="text1 col-12 col-lg-6">
+                <h2 class="col-12 col-lg-12">Real Madrid y Barcelona impugnan el acuerdo de LaLiga y CVC </h2>
+                <p class="col-12 col-lg-12">Barcelona y Real Madrid, los tres equipos que rechazaron formar parte de la firma de LaLiga con el fondo de inversión CVC, han emitido este viernes un comunicado</p>
+            </div>
+        </div>    
+    </a>
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="espacio2 col-12 col-lg-2"></div>
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/15/61411c08ca4741ce6c8b45de.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://phantom-marca.unidadeditorial.es/be5d68e78ecbc661e2b7377190146cc7/resize/660/f/webp/assets/multimedia/imagenes/2021/09/15/16316579829555.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">Baño de Realidad: Barça 0-3 Bayern</h2>
+        </div>
+    </a>
+    <div class="espacio2 col-12 col-lg-2"></div>
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/19/6147215322601da6318b459d.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://www.fcbarcelona.com/photo-resources/2021/08/17/1e3b7c78-5206-47d7-a8b2-29e8014b9f25/mini_1200x750-riqui.png?width=1200&height=750">
+            </div>
+            <h2 class="col-12 col-lg-12">Riqui Puig ya sabe el porqué no juega</h2>
+        </div>
+    </a>
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="espacio2 col-12 col-lg-2"></div>  
+    <a href="https://www.marca.com/apuestas-deportivas/datos/2021/09/19/61446effe2704edf828b45c0.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://phantom-marca.unidadeditorial.es/c661428a962d85bec9295d9034b869ca/resize/660/f/webp/assets/multimedia/imagenes/2021/09/17/16318757894371.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">Memphis, en busca de otro inicio a la altura de Ibrahimovic y Fàbregas</h2>
+        </div>
+    </a>
+    <div class="espacio2 col-12 col-lg-2"></div>  
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/17/613f58c222601d245d8b45a0.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://phantom-marca.unidadeditorial.es/c6f899136fe3bb79e569572b8c97c299/resize/660/f/webp/assets/multimedia/imagenes/2021/09/13/16315433002781.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">El Barça se 'parte' por las rodillas: 16 lesiones </h2>
+        </div>
+    </a> 
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="espacio2 col-12 col-lg-2"></div>
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/18/6144d12b22601d36258b45af.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://phantom-marca.unidadeditorial.es/2859c8996c2fc7e3d05666a47d89bf93/resize/660/f/webp/assets/multimedia/imagenes/2021/09/17/16318997052354.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">Llega la hora de los niños: Balde, Gavi, Demir...</h2>
+        </div>
+    </a>
+    <div class="espacio2 col-12 col-lg-2"></div>  
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/17/6144739622601d266f8b45a7.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://phantom-marca.unidadeditorial.es/e9b0f20107ac59949f425ba28a848df3/resize/660/f/webp/assets/multimedia/imagenes/2021/09/17/16318761789716.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">El nuevo presupuesto del Barcelona disminuirá el aval necesario</h2>
+        </div>
+    </a> 
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="espacio2 col-12 col-lg-2"></div>
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/19/6144984e22601d6b6c8b45f0.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://phantom-marca.unidadeditorial.es/7df26f56b6c420cac715bffd9337b1a0/resize/660/f/webp/assets/multimedia/imagenes/2021/09/17/16318855131470.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">Coutinho se la juega</h2>
+        </div>
+    </a>
+    <div class="espacio2 col-12 col-lg-2"></div>  
+    <a href="https://www.marca.com/futbol/barcelona/2021/09/19/6147069f22601d93648b45ac.html" target="_blank">
+        <div class="noticia2 col-11 col-lg-3">
+            <div class="imagenn col-12 col-lg-12">
+                <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2021/09/01/16305015725682.jpg">
+            </div>
+            <h2 class="col-12 col-lg-12">Koeman: "No tengo ningún miedo sobre mi futuro"</h2>
+        </div>
+    </a>
+    <div class="separador col-12 col-lg-12"></div>
+    <div class="espacio2 col-12 col-lg-2"></div> 
+    <div class="redes col-12 col-lg-12">
+        <h3 class="col-12 col-lg-12">Sigue al Barça en redes sociales</h3>
+        <div class="red col-10 col-lg-8">
+            <div class="reds col-6 col-lg-2">
+                <a href="https://chats.viber.com/fcbarcelona" target="_blank">
+                    <img src="img/red1.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.facebook.com/fcbarcelona/">
+                    <img src="img/face.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://twitter.com/fcbarcelona_es" target="_blank">
+                    <img src="img/twitter.jpg">
+                </a>
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.youtube.com/user/fcbarcelona" target="_blank">
+                    <img src="img/youtube.jpg">
+                </a>    
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.instagram.com/fcbarcelona/" target="_blank">
+                    <img src="img/insta.jpg">
+                </a>    
+            </div>
+            <div class="reds col-6 col-lg-2">
+                <a href="https://www.tiktok.com/@fcbarcelona" target="_blank">
+                    <img src="img/tiktok.jpg">
+                </a>    
+            </div>
+        </div>
+        <div class="separadort col-12 col-lg-12"></div>
+        <div class="creditos col-12 col-lg-12">
+            <p class="col-12 col-lg-2">Creadores:</p>
+            <a href="https://www.facebook.com/erickdavid.blancosantos/" target="_blank" class="col-12 col-lg-3">||Erick David Blanco||</a> 
+            <a href="https://www.facebook.com/hectorjosue.rodriguesdiscua" target="_blank" class="col-12 col-lg-3">||Héctor Josué Rodrigues||</a>
+            <a href="https://www.facebook.com/profile.php?id=100011257620607" target="_blank" class="col-12 col-lg-3">||Waldin Francisco Castillo||</a>
+           
+        </div>
+    </div>   	
+</body>
+</html>
